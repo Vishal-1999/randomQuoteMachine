@@ -42,15 +42,18 @@
 					var i = 1639;
 					var quoteText, quoteAuthor;
 					var j = 0;
+					var color = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
 					i = rand(1, 1639);
-					//j = rand(1, 8);
+					j = rand(0, color.length - 1);
 
 					quoteText = "<p>" + json[i].quoteText + "</p>";
 					quoteAuthor = "<p>" + json[i].quoteAuthor + "</p>";
 
 					$("#quoteText").html(quoteText);
 					$("#quoteAuthor").html(quoteAuthor);
+					$("body").css('background-color', color[j]);
+					$('#quoteText').css("color", color[j]);
 				});
 				});
 			});
