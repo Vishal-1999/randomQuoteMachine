@@ -13,7 +13,14 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<!---->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -22,6 +29,33 @@
 			<div id='quoteAuthor'>vishal</div>
 			<button class='btn btn-primary' id="button">New Quote</button>
 		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				function rand(min, max) {
+					// body...
+					return Math.floor(Math.random() * (max - min + 1)) + min;
+				}
+
+				$("#button").on('click', function(){
+					$.getJSON('json/bigquotes.json', function(json){
+					var i = 1639;
+					var quoteText, quoteAuthor;
+					var j = 0;
+
+					i = rand(1, 1639);
+					//j = rand(1, 8);
+
+					quoteText = "<p>" + json[i].quoteText + "</p>";
+					quoteAuthor = "<p>" + json[i].quoteAuthor + "</p>";
+
+					$("#quoteText").html(quoteText);
+					$("#quoteAuthor").html(quoteAuthor);
+				});
+				});
+			});
+		</script>
+
 	</div>
 </body>
 </html>
