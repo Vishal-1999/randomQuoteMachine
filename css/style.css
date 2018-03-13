@@ -17,8 +17,13 @@ body{
 
 #button{
 
+	float: right;
+	margin: auto;
+	margin-right: 20px;
 	
-	
+}
+#twitter{
+	margin-left: 10px;
 }
 
 
