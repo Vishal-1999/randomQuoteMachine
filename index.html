@@ -29,7 +29,7 @@
 		<div id='quoteBox'>
 			<div id='quoteText'>quote</div>
 			<div id='quoteAuthor'>vishal</div>
-			<div id='twitter'></div>
+			<button id='twitter' class="btn"></button>
 			<button class='btn' id="button">New Quote</button>
 		</div>
 
@@ -53,7 +53,7 @@
 					quoteText = "<p>" + "<i class='fa fa-quote-left'></i> "+ json[i].quoteText + "</p>";
 					quoteAuthor = "<p>" + "- " + json[i].quoteAuthor + "</p>";
 
-					twitter= "<a href='https://twitter.com/intent/tweet?text=%20" + json[i].quoteText +"%20' target=\"_blank\"><button class='btn'><i class='fa fa-twitter'></i></button></a>"
+					twitter = "<a href='https://twitter.com/intent/tweet?text=%20" + json[i].quoteText +"%20' target=\"_blank\"><i class='fa fa-twitter'></i></a>"
 
 					
 					$("#quoteText").html(quoteText);
