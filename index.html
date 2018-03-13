@@ -29,7 +29,7 @@
 		<div id='quoteBox'>
 			<div id='quoteText'>quote</div>
 			<div id='quoteAuthor'>vishal</div>
-			<button class="btn"><i class="fa fa-twitter"></i></button>
+			<div id='twitter'></div>
 			<button class='btn' id="button">New Quote</button>
 		</div>
 
@@ -43,7 +43,7 @@
 				$("#button").on('click', function(){
 					$.getJSON('json/bigquotes.json', function(json){
 					var i = 1639;
-					var quoteText, quoteAuthor;
+					var quoteText, quoteAuthor, twitter;
 					var j = 0;
 					var color = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
@@ -53,11 +53,15 @@
 					quoteText = "<p>" + "<i class='fa fa-quote-left'></i> "+ json[i].quoteText + "</p>";
 					quoteAuthor = "<p>" + "- " + json[i].quoteAuthor + "</p>";
 
+					twitter= "<a href='https://twitter.com/intent/tweet?text=%20" + json[i].quoteText +"%20' target=\"_blank\"><button class='btn'><i class='fa fa-twitter'></i></button></a>"
+
+					//twitter = "<a href='https://twitter.com/intent/tweet?text=" + quoteText + "'><button class='btn'><i class='fa fa-twitter'></i></button></a>";
 					$("#quoteText").html(quoteText);
 					$("#quoteAuthor").html(quoteAuthor);
 					$("body").css('background-color', color[j]);
 					$('#quoteText, #quoteAuthor').css("color", color[j]);
 					$(".btn").css("background-color", color[j]);
+					$("#twitter").html(twitter);
 				});
 				});
 			});
