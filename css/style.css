@@ -10,11 +10,17 @@ body{
 	border-radius: 2%;
 	padding-bottom: 6px;
 }
+
+#twitter{
+	display: inline;
+}
+
 #button{
 
 	
 	
 }
+
 
 #quoteText{
 	text-align: center;
