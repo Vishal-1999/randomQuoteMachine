@@ -29,7 +29,10 @@
 		<div id='quoteBox'>
 			<div id='quoteText'><i class="fa fa-quote-left"></i> When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.</div>
 			<div id='quoteAuthor'>- Helen Keller</div>
+			<div id='twitter' class='btn'></div>
+			<!--
 			<button id='twitter' class="btn"><a href="https://twitter.com/intent/tweet?text=A quote by Helen Keller - When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us."><i class="fa fa-twitter"></i></a></button>
+			-->
 			<button class='btn' id="button">New Quote</button>
 		</div>
 
@@ -60,10 +63,12 @@
 					$("#quoteAuthor").html(quoteAuthor);
 					$("body").css('background-color', color[j]);
 					$('#quoteText, #quoteAuthor').css("color", color[j]);
-					$(".btn").css("background-color", color[j]);
+					$(".btn, #twitter").css("background-color", color[j]);
 					$("#twitter").html(twitter);
 				});
 				});
+
+
 			});
 		</script>
 
